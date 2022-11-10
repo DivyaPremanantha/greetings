@@ -1,3 +1,4 @@
+import choreotestorganization/accelerator;
 import ballerina/http;
 
 # A service representing a network-accessible API
@@ -13,5 +14,15 @@ service / on new http:Listener(9090) {
             consentId: "123"
         };
         return accountsData;
+    }
+
+    resource function get accountAccessConsent() returns error? {
+
+        accelerator:Client acceleratorEp = check new (clientConfig = {
+            auth: {
+                clientId: "",
+                clientSecret: ""
+            }
+        });
     }
 }
