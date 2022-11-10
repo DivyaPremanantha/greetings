@@ -270,11 +270,24 @@ modules = [
 
 [[package]]
 org = "choreotestorganization"
+name = "accelerator"
+version = "1.0.0"
+dependencies = [
+	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "url"}
+]
+modules = [
+	{org = "choreotestorganization", packageName = "accelerator", moduleName = "accelerator"}
+]
+
+[[package]]
+org = "choreotestorganization"
 name = "accountandtransactionapi_hs"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
-	{org = "ballerinai", name = "observe"}
+	{org = "ballerinai", name = "observe"},
+	{org = "choreotestorganization", name = "accelerator"}
 ]
 modules = [
 	{org = "choreotestorganization", packageName = "accountandtransactionapi_hs", moduleName = "accountandtransactionapi_hs"}
