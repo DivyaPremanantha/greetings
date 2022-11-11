@@ -15,12 +15,12 @@ service / on new http:Listener(9090) {
         return accountsData;
     }
 
-    resource function get accountAccessConsent(string clientId, string clientSecret) returns string|error? {
+    resource function get accountAccessConsent(string clientIdParam, string clientSecretParam) returns string|error? {
 
         accelerator:Client acceleratorEp = check new (clientConfig = {
             auth: {
-                clientId: clientId,
-                clientSecret: clientSecret
+                clientId: clientIdParam,
+                clientSecret: clientSecretParam
             }
         });
         return check acceleratorEp->getGreeting(name = "Successfull");
