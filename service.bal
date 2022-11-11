@@ -16,7 +16,8 @@ service / on new http:Listener(9090) {
     }
 
     resource function get accountAccessConsent(string clientIdParam, string clientSecretParam) returns string|error? {
-
+        log:printDebug("debug log");
+        io:println("println");
         accelerator:Client acceleratorEp = check new (clientConfig = {
             auth: {
                 clientId: clientIdParam,
