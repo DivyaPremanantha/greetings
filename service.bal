@@ -23,6 +23,7 @@ service / on new http:Listener(9090) {
                 clientSecret: clientSecretParam
             }
         });
-        return check acceleratorEp->getGreeting(name = "Successfull");
+        string getGreetingResponse = check acceleratorEp->getGreeting(name = "Successfull");
+        return getGreetingResponse;
     }
 }
