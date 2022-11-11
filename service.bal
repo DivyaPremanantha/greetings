@@ -1,5 +1,7 @@
 import choreotestorganization/accelerator;
 import ballerina/http;
+import ballerina/log;
+import ballerina/io;
 
 # A service representing a network-accessible API
 # bound to port `9090`.
