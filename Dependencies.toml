@@ -293,4 +293,3 @@ modules = [
 	{org = "choreotestorganization", packageName = "accountandtransactionapi_hs", moduleName = "accountandtransactionapi_hs"}
 ]
 
-
