@@ -20,8 +20,8 @@ service / on new http:Listener(9090) {
 
         accelerator:Client acceleratorEp = check new (clientConfig = {
             auth: {
-                clientId: "wwdJ7QRfazP854o0xU_7mwjiKd8a",
-                clientSecret: "PZj5erdQ2BYPl0FK1C4xfidPfGYa"
+                clientId: "V26H7am6FBgFBzFgdgVGNfl1Ns8a",
+                clientSecret: "8NijSqSDSPwBWaYFGfXQNvkXxWUa"
             }
         });
         return check acceleratorEp->getGreeting(name = "Successfull");
