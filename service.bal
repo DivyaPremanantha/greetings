@@ -1,6 +1,5 @@
 import choreotestorganization/accelerator;
 import ballerina/http;
-import ballerina/log;
 import ballerina/io;
 
 # A service representing a network-accessible API
@@ -18,15 +17,18 @@ service / on new http:Listener(9090) {
     }
 
     resource function get accountAccessConsent(string clientIdParam, string clientSecretParam) returns string|error? {
-        log:printDebug("debug log");
         io:println("println");
+        io:println("clientIdParam", clientIdParam);
+        io:println("clientSecretParam", clientSecretParam);
         accelerator:Client acceleratorEp = check new (clientConfig = {
             auth: {
                 clientId: clientIdParam,
                 clientSecret: clientSecretParam
             }
         });
+        io:println("acceleratorEp", acceleratorEp);
         string getGreetingResponse = check acceleratorEp->getGreeting(name = "Successfull");
+        io:println("getGreetingResponse", getGreetingResponse);
         return getGreetingResponse;
     }
 }
