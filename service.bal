@@ -16,13 +16,14 @@ service / on new http:Listener(9090) {
         return accountsData;
     }
 
-    resource function get accountAccessConsent() returns error? {
+    resource function get accountAccessConsent() returns string|error? {
 
         accelerator:Client acceleratorEp = check new (clientConfig = {
             auth: {
-                clientId: "",
-                clientSecret: ""
+                clientId: "wwdJ7QRfazP854o0xU_7mwjiKd8a",
+                clientSecret: "PZj5erdQ2BYPl0FK1C4xfidPfGYa"
             }
         });
+        return check acceleratorEp->getGreeting(name = "Successfull");
     }
 }
